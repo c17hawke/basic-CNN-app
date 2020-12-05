@@ -1,7 +1,7 @@
 import os
 import tensorflow as tf
 import numpy as np
-import config
+import utils.config as config
 
 def save_vgg_16_model(input_shape=config.IMAGE_SIZE):
     model = tf.keras.applications.vgg16.VGG16(

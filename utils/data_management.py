@@ -1,7 +1,7 @@
 import os
 import tensorflow as tf
 import numpy as np
-import config
+import utils.config as config
 
 def train_valid_generator(
     IMAGE_SIZE = config.IMAGE_SIZE[:-1],
