@@ -52,6 +52,30 @@ def custom_model(CLASSES=config.CLASSES, freeze_all=True, freeze_till=None):
     return full_model
 
 
+def callbacks(base_dir="."):
+
+    # tensorboard callbacks
+    base_log_dir = config.BASE_LOG_DIR
+    tensorboard_log_dir = os.path.join(base_log_dir, "tensorboard_log_dir")
+    os.makedirs(tensorboard_log_dir, exist_ok=True)
+
+    tensorboard_cb = tf.keras.callbacks.TensorBoard(log_dir=tensorboard_log_dir)
+
+    # checkpoint callbacks
+
+    checkpoint_file = os.path.join(config.CHECKPOINT_DIR, "vgg_16model_checkpoint.h5")
+    os.makedirs(config.CHECKPOINT_DIR, exist_ok=True)
+
+    checkpoint_cb = tf.keras.callbacks.ModelCheckpoint(
+        filepath=checkpoint_file,
+        save_best_only=True
+    )
+
+    callback_list = [tensorboard_cb, checkpoint_cb]
+
+    return callback_list
+
+
 if __name__ == "__main__":
     # save_vgg_16_model()
     # load_base_model()

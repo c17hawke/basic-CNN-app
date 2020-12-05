@@ -8,3 +8,4 @@ CLASSES = 2
 TRAINED_MODEL_DIR = os.path.join("VGGmodel", "models")
 CHECKPOINT_DIR = os.path.join("VGGmodel", "checkpoints")
 AUGMENTATION = False
+BASE_LOG_DIR = "base_log_dir"
