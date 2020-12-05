@@ -3,6 +3,7 @@ we are learning how to package a CNN application
 
 
 ## Directory structure -
+```
 ├── [data]
 │   └── [PetImages]
 │       ├── [catt]
@@ -31,3 +32,4 @@ we are learning how to package a CNN application
 │           └── validation
 ├── dog.jpg   ## testing image for prediction
 └── cat.jpeg  ## testing image for prediction
+```
