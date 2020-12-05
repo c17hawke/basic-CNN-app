@@ -2,6 +2,7 @@ import os
 import tensorflow as tf
 import numpy as np
 import utils.config as config
+import time
 
 def save_vgg_16_model(input_shape=config.IMAGE_SIZE):
     model = tf.keras.applications.vgg16.VGG16(
@@ -55,8 +56,9 @@ def custom_model(CLASSES=config.CLASSES, freeze_all=True, freeze_till=None):
 def callbacks(base_dir="."):
 
     # tensorboard callbacks
-    base_log_dir = config.BASE_LOG_DIR
-    tensorboard_log_dir = os.path.join(base_log_dir, "tensorboard_log_dir")
+    base_log_dir = config.TENSORBOARD_ROOT_LOG_DIR
+    unique_log = time.strftime("log_at_%Y%m%d_%H%M%S")
+    tensorboard_log_dir = os.path.join(base_log_dir, unique_log)
     os.makedirs(tensorboard_log_dir, exist_ok=True)
 
     tensorboard_cb = tf.keras.callbacks.TensorBoard(log_dir=tensorboard_log_dir)
