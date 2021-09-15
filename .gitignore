@@ -129,7 +129,8 @@ dmypy.json
 .pyre/
 
 # data directory
-data
+data/PetImages/cat
+data/PetImages/dog
 
 .vscode
 .gitattributes

@@ -14,6 +14,7 @@ def save_vgg_16_model(input_shape=config.IMAGE_SIZE):
     print("base model is saved")
 
 def load_base_model():
+    save_vgg_16_model(input_shape=config.IMAGE_SIZE)
     model = tf.keras.models.load_model("original_vgg_base.h5")
     print("original base model is loaded")
     model.summary()
